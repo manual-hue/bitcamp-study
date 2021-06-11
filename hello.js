@@ -1,4 +1,10 @@
-console.log("오호라.. 나는야 A 개발자"); // 자바스크립트 출력 명령 console.log("")
-console.log("Hello, World!");
-console.log("B개발자");
+var i = -1;
+if (i>0) {
+    console.log("Hello, World!");
+} else {
+    console.log("HaHa~~~");
+}
 
+greeting("홍길동");
+greeting("임꺽정");
+greeting("유관순");
