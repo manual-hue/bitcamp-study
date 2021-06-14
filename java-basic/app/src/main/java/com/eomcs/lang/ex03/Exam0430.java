@@ -32,5 +32,7 @@ public class Exam0430 {
     // 이전에 했던대로 (char) 명령을 붙여라
     System.out.println((char)('각' + 1));
     System.out.println((char)('각' - 1));
+
+    System.out.println('A' + 1); // 내가 노린 건 66이니까 아마도 B
   }
 }
