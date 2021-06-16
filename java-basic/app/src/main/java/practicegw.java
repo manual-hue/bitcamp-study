@@ -17,5 +17,9 @@ class gilbertwilliam {
        System.out.println(0.314e1); // 0.314 * 10의1승 = 3.14
        System.out.println(31.4e-1); // 31.4 * 10의-1승 = 3.14
        System.out.println(314e-2); // 314 * 10의-2승 = 3.14
+    
+       int i = 5;
+        i++;
+        System.out.println(i);
     }
 }
