@@ -1,22 +1,21 @@
 package com.eomcs.lang.ex07;
 
+import java.util.Calendar;
 import java.util.Scanner;
 
 public class prac {
-  public static void main(String[] args) {
+  public int getJy(int birthYear, int birthMonth, int birthday) {
     
-  Scanner Keyboard = new Scanner(System.in);
-    System.out.print("지금은 몇 년도? (네 자리 수로 기입하시오.) ");
-    int year = Keyboard.nextInt();
-    int age;
-    Keyboard.close();
-  
-  for(year = 2007 ; year < 2100 ; year++ ) {
-    for(age = 0 ; age < 100 ; age++ );  {
-      
-      
-      System.out.printf("%d년 지윤의 나이: %d살\n", year, age);
-      }
-    }
+    Calendar current = Calendar.getInstance();
+    int currentYear = current.get(Calendar.YEAR);
+    int currentMonth = current.get(Calendar.MONTH) +1 ;
+    int currentDay = current.get(Calendar.DAY_OF_MONTH);
+    
+    int age = currentYear - birthYear;
+    //생일이 안 지났으면 -1
+    if (birthMonth * 100  + birthday > currentMonth * 100 + currentDay)
+    age--;
+    
+    return age;        
   }
 }
