@@ -13,6 +13,8 @@ public class prac {
   
   for(year = 2007 ; year < 2100 ; year++ ) {
     for(age = 0 ; age < 100 ; age++ );  {
+      
+      
       System.out.printf("%d년 지윤의 나이: %d살\n", year, age);
       }
     }
