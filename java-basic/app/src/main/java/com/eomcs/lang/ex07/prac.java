@@ -16,6 +16,10 @@ public class prac {
     if (birthMonth * 100  + birthday > currentMonth * 100 + currentDay)
     age--;
     
+    
+    if 
+    System.out.print("연도를 입력하시오. (네 자리 숫자): ");
+    
     return age;        
   }
 }
