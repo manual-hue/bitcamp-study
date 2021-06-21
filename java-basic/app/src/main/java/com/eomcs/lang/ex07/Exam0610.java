@@ -1,7 +1,7 @@
 package com.eomcs.lang.ex07;
 
 // # JVM 아규먼트
-//
+
 public class Exam0610 {
 
   public static void main(String[] 변수명은상관없다) {
