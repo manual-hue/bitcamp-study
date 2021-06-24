@@ -2,11 +2,11 @@ package com.eomcs;
 
 import java.util.Scanner;
 
-public class MemberHandler {
+public class MemberHandler implements Handler {
   
   static Scanner keyScan;
   
-  static void service() {
+  public void execute() {
     loop: while (true) {
       System.out.println("[회원 관리]"); 
       String command = keyScan.nextLine();
