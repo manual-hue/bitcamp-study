@@ -2,7 +2,6 @@ package com.eomcs;
 
 import java.util.Date;
 import java.util.Scanner;
-import com.eomcs.BoardHandler.Board;
 
 public class MemberHandler implements Handler {
   
@@ -28,11 +27,11 @@ public class MemberHandler implements Handler {
       String command = keyScan.nextLine();
       
        switch (command) {
-         case "list": BoardHandler.list(); break;
-         case "add": BoardHandler.add(); break;
-         case "update": BoardHandler.update(); break;
-         case "delete": BoardHandler.delete(); break;
-         case "view": BoardHandler.view(); break;
+         case "list": list(); break;
+         case "add": add(); break;
+         case "update": update(); break;
+         case "delete": break;
+         case "view": view(); break;
          case "back":
            break loop;
          default:
@@ -83,16 +82,79 @@ public class MemberHandler implements Handler {
     System.out.println("[회원 목록]");
 
     Object[] arr = ArrayList.toArray();
-    int i = 0;
-    for (Object item : arr) {
-      Board board = (Board) item;
-      System.out.printf("%d, %s, %s, %d\n", 
-          i++, 
-          board.title, 
-          String.format("%1$tY-%1$tm-%1$td", board.createdDate),
-          board.viewCount);
+    
+    for (int i = 0; i < arr.length; i++) {
+      Member member = (Member) arr[i];
+//      for (Object item : arr) {
+//      Member member = (Member) item;
+      System.out.printf("%d, %s, %s, %b\n", 
+          i, 
+          member.name, 
+          String.format("%1$tY-%1$tm-%1$td", member.registeredDate),
+          member.working);
     }
   }
   
-}
+  static void view() {
+    System.out.println("[회원 조회]");
 
+    System.out.print("번호? ");
+    int index = Integer.parseInt(keyScan.nextLine());
+
+    if (index < 0 || index >= ArrayList.size) {
+      System.out.println("무효한 회원 번호입니다.");
+      return;
+    }
+  
+    Member member = (Member) ArrayList.retrieve(index);
+
+    System.out.printf("이름: %s\n", member.name);
+    System.out.printf("이메일: %s\n", member.email);
+    System.out.printf("등록일: %1$tY-%1$tm-%1$td\n", member.registeredDate);
+    System.out.printf("재직중: %s\n", member.working ? "예" : "아니오"); //항 세 개로 이루어진 조건연산자O 조건문X
+  }
+  
+  
+  static void update() {
+    System.out.println("[회원 변경]");
+
+    System.out.print("번호? ");
+    int index = Integer.parseInt(keyScan.nextLine());
+
+    if (index < 0 || index >= ArrayList.size) {
+      System.out.println("무효한 회원 번호입니다.");
+      return;
+    }
+
+    Member member = (Member) ArrayList.retrieve(index);
+
+    System.out.printf("이름(%s)? ", member.name);
+    String name = keyScan.nextLine();
+
+    System.out.printf("이메일(%s)? ", member.email);
+    String email = keyScan.nextLine();
+
+    System.out.printf("암호? ");
+    String password = keyScan.nextLine();
+    
+    System.out.printf("재직중(%s)? ", member.working ? "예" : "아니오");
+      boolean working = false;
+      if (keyScan.nextLine().equals("y")) {
+        working = true;
+      }
+
+    System.out.print("정말 변경하시겠습니까?(y/n) ");
+    if (!keyScan.nextLine().equals("y")) {
+      System.out.println("회원 정보 변경을 취소하였습니다.");
+      return;
+    } 
+
+    // 배열에서 꺼낸 인스턴스의 각 변수 값을 변경
+    member.name = name;
+    member.email = email;
+    member.password = password;
+    member.working = working;
+
+    System.out.println("회원 정보를 변경하였습니다.");
+  }
+}
