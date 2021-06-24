@@ -1,6 +1,6 @@
 package com.eomcs;
 
 // 메뉴를 처리할 class가 반드시 만들어야 하는 메서드의 시그너쳐를 정한다.
-public interface Handler {
+interface Handler {
   void execute();
 }
