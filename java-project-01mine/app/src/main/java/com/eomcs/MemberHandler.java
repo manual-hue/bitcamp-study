@@ -30,7 +30,7 @@ public class MemberHandler implements Handler {
          case "list": list(); break;
          case "add": add(); break;
          case "update": update(); break;
-         case "delete": break;
+         case "delete": delete(); break;
          case "view": view(); break;
          case "back":
            break loop;
@@ -157,4 +157,26 @@ public class MemberHandler implements Handler {
 
     System.out.println("회원 정보를 변경하였습니다.");
   }
+  
+  static void delete() {
+    System.out.println("[회원 삭제]");
+
+    System.out.print("번호? ");
+    int index = Integer.parseInt(keyScan.nextLine());
+
+    if (index < 0 || index >= ArrayList.size) {
+      System.out.println("무효한 회원 번호입니다.");
+      return;
+    }
+
+    System.out.print("정말 삭제하시겠습니까?(y/n) ");
+    if (!keyScan.nextLine().equals("y")) {// y가 아니라 n라고 할 경우
+      System.out.println("회원 정보 삭제를 취소하였습니다.");
+      return;
+    } 
+
+    ArrayList.remove(index);
+
+    System.out.println("회원 정보를 삭제하였습니다.");
+  } 
 }
