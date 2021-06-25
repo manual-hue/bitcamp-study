@@ -41,6 +41,9 @@ import java.util.Scanner;
 //      - BoardHandler.java와 MemberHandler.java 변경
 //      - 각 핸들러가 사용할 ArrayList의 인스턴스를 따로 생성한다
 //      - ArrayList의 메서드를 호출할 때마다 인스턴스 주소를 전달한다.
+//27. 인스턴스 변수를 사용하는 메서드는 인스턴스 메서드로 선언하기
+//      - ArrayList의 메서드를 클래스 메서드에서 인스턴스 메서드로 변환한다.
+//      - BoardHandler 와 MemberHandler 에서 Arraylist의 메서드를 호출할 때
 
 public class App {
 

@@ -74,7 +74,7 @@ public class MemberHandler implements Handler {
 
     member.registeredDate = new Date(); // 현재의 날짜와 시간을 생성하여 배열에 저장한다.
 
-    ArrayList.append(memberList, member);// append에게 memberList에서 member를 찾으라는 명령
+    memberList.append(member);// append에게 memberList에서 member를 찾으라는 명령
 
     System.out.println("회원을 등록했습니다.");
     }
@@ -83,7 +83,7 @@ public class MemberHandler implements Handler {
   static void list() {
     System.out.println("[회원 목록]");
 
-    Object[] arr = ArrayList.toArray(memberList);
+    Object[] arr = memberList.toArray();
     
     for (int i = 0; i < arr.length; i++) {
       Member member = (Member) arr[i];
@@ -108,7 +108,7 @@ public class MemberHandler implements Handler {
       return;
     }
   
-    Member member = (Member) ArrayList.retrieve(memberList, index);
+    Member member = (Member) memberList.retrieve(index);
 
     System.out.printf("이름: %s\n", member.name);
     System.out.printf("이메일: %s\n", member.email);
@@ -128,7 +128,7 @@ public class MemberHandler implements Handler {
       return;
     }
 
-    Member member = (Member) ArrayList.retrieve(memberList, index);
+    Member member = (Member) memberList.retrieve(index);
 
     System.out.printf("이름(%s)? ", member.name);
     String name = keyScan.nextLine();
@@ -177,7 +177,7 @@ public class MemberHandler implements Handler {
       return;
     } 
 
-    ArrayList.remove(memberList, index);
+    memberList.remove(index);
 
     System.out.println("회원 정보를 삭제하였습니다.");
   } 

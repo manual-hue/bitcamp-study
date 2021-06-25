@@ -48,7 +48,7 @@ public class BoardHandler implements Handler {
   static void list() {
     System.out.println("[게시글 목록]");
 
-    Object[] arr = ArrayList.toArray(boardList);
+    Object[] arr = boardList.toArray();
     int i = 0;
     for (Object item : arr) {
       Board board = (Board) item;
@@ -82,7 +82,7 @@ public class BoardHandler implements Handler {
 
     board.createdDate = new Date(); // 현재의 날짜와 시간을 생성하여 배열에 저장한다.
 
-    ArrayList.append(boardList, board);
+    boardList.append(board);
 
     System.out.println("게시글을 등록했습니다.");
   }
@@ -98,7 +98,8 @@ public class BoardHandler implements Handler {
       return;
     }
 
-    Board board = (Board) ArrayList.retrieve(boardList, index);
+    Board board = (Board) boardList.retrieve(index);//boardList의 인스턴스 주소 retrieve로 가
+    // 가서 index 값 가지고 작업해
 
     System.out.printf("제목(%s)? ", board.title);
     String title = keyScan.nextLine();
@@ -135,7 +136,7 @@ public class BoardHandler implements Handler {
       return;
     } 
 
-    ArrayList.remove(boardList, index);
+    boardList.remove(index);
 
     System.out.println("게시글이 삭제 되었습니다.");
   }
@@ -151,7 +152,7 @@ public class BoardHandler implements Handler {
       return;
     }
 
-    Board board = (Board) ArrayList.retrieve(boardList, index);
+    Board board = (Board) boardList.retrieve(index);
 
     board.viewCount++;
 
