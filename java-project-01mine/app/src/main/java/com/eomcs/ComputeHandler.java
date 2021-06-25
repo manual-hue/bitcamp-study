@@ -3,7 +3,8 @@ package com.eomcs;
 import java.util.Scanner;
 
 public class ComputeHandler implements Handler {
-  static Scanner keyScan;
+  
+  Scanner keyScan;
   
   public void execute() {
     while (true) {
