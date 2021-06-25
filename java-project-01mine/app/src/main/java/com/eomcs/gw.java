@@ -32,12 +32,33 @@ public class gw {
           
           break;
         case "view":
+          System.out.println( );
           System.out.println("글 조회");
+          System.out.println( );
+          System.out.print("content Number? > ");
+          
+          int index = Integer.parseInt(keyboard.nextLine()); // 키보드로 받은 문자 값을 숫자로 반환하겠다.
+          if (index < 0 || index >= size) {
+            System.out.println("무효한 글 번호입니다. 다시 입력해주시길 바랍니다.");
+            break;
+          }
+          
+          System.out.printf("title: %s\n", title);
+          System.out.printf("content: %s\n", content);
+          System.out.printf("password: %s\n", password);
+          
+          
           break;
         case "add":
           System.out.println( );
           System.out.println("글 작성");
           System.out.println( );
+          
+          if (size == BOARD_LENGTH) {
+            System.out.println("더 이상 글을 작성할 수 없습니다.");
+            break;
+          }
+          
           System.out.print("title? > ");
           title[size] = keyboard.nextLine();
           
