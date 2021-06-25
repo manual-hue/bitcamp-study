@@ -16,6 +16,9 @@ public class BoardHandler implements Handler {
   
   static Scanner keyScan;
   
+  static ArrayList boardList = new ArrayList();
+  
+  // BoardHandler에서 사용할 ArrayList의 인스턴스를 준비한다.
   //규칙을 따를 때 static을 붙이면 안 된다. static void > public void
   //정해진 규칙을 준수하지 않을 경우 바로 에러가 뜬다.
   public void execute() {
@@ -45,7 +48,7 @@ public class BoardHandler implements Handler {
   static void list() {
     System.out.println("[게시글 목록]");
 
-    Object[] arr = ArrayList.toArray();
+    Object[] arr = ArrayList.toArray(boardList);
     int i = 0;
     for (Object item : arr) {
       Board board = (Board) item;
@@ -60,7 +63,7 @@ public class BoardHandler implements Handler {
   static void add() {
     System.out.println("[게시글 등록]");
 
-    if (ArrayList.size == ArrayList.MAX_LENGTH) {
+    if (boardList.size == ArrayList.MAX_LENGTH) {
       System.out.println("더 이상 게시글을 추가할 수 없습니다.");
       return;
     }
@@ -79,7 +82,7 @@ public class BoardHandler implements Handler {
 
     board.createdDate = new Date(); // 현재의 날짜와 시간을 생성하여 배열에 저장한다.
 
-    ArrayList.append(board);
+    ArrayList.append(boardList, board);
 
     System.out.println("게시글을 등록했습니다.");
   }
@@ -90,12 +93,12 @@ public class BoardHandler implements Handler {
     System.out.print("번호? ");
     int index = Integer.parseInt(keyScan.nextLine());
 
-    if (index < 0 || index >= ArrayList.size) {
+    if (index < 0 || index >= boardList.size) {
       System.out.println("무효한 게시글 번호입니다.");
       return;
     }
 
-    Board board = (Board) ArrayList.retrieve(index);
+    Board board = (Board) ArrayList.retrieve(boardList, index);
 
     System.out.printf("제목(%s)? ", board.title);
     String title = keyScan.nextLine();
@@ -105,14 +108,14 @@ public class BoardHandler implements Handler {
 
     System.out.print("정말 변경하시겠습니까?(y/n) ");
     if (!keyScan.nextLine().equals("y")) {
-      System.out.println("게시글 변경을 최소하였습니다.");
+      System.out.println("게시글 변경이 취소 되었습니다.");
       return;
     } 
 
     board.title = title;
     board.content = content;
 
-    System.out.println("게시글을 변경하였습니다.");
+    System.out.println("게시글이 변경되었습니다.");
   }
 
   static void delete() {
@@ -121,20 +124,20 @@ public class BoardHandler implements Handler {
     System.out.print("번호? ");
     int index = Integer.parseInt(keyScan.nextLine());
 
-    if (index < 0 || index >= ArrayList.size) {
+    if (index < 0 || index >= boardList.size) {
       System.out.println("무효한 게시글 번호입니다.");
       return;
     }
 
     System.out.print("정말 삭제하시겠습니까?(y/n) ");
     if (!keyScan.nextLine().equals("y")) {
-      System.out.println("게시글 삭제를 최소하였습니다.");
+      System.out.println("게시글 삭제가 취소되었습니다.");
       return;
     } 
 
-    ArrayList.remove(index);
+    ArrayList.remove(boardList, index);
 
-    System.out.println("게시글을 삭제하였습니다.");
+    System.out.println("게시글이 삭제 되었습니다.");
   }
 
   static void view() {
@@ -143,12 +146,12 @@ public class BoardHandler implements Handler {
     System.out.print("번호? ");
     int index = Integer.parseInt(keyScan.nextLine());
 
-    if (index < 0 || index >= ArrayList.size) {
+    if (index < 0 || index >= boardList.size) {
       System.out.println("무효한 게시글 번호입니다.");
       return;
     }
 
-    Board board = (Board) ArrayList.retrieve(index);
+    Board board = (Board) ArrayList.retrieve(boardList, index);
 
     board.viewCount++;
 

@@ -38,6 +38,9 @@ import java.util.Scanner;
 //      - ArrayList2.java는 삭제한다.
 //      - ArrayList.java의 변수를 인스턴스 변수로 전환한다. 
 //      - 메서드에 작업할 때 사용할 변수의 주소를 파라미터로 받는다.
+//      - BoardHandler.java와 MemberHandler.java 변경
+//      - 각 핸들러가 사용할 ArrayList의 인스턴스를 따로 생성한다
+//      - ArrayList의 메서드를 호출할 때마다 인스턴스 주소를 전달한다.
 
 public class App {
 
