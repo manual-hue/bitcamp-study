@@ -65,7 +65,7 @@ public class gw {
           if (size == BOARD_LENGTH) {
             System.out.println("더 이상 글을 작성할 수 없습니다.");
             break;
-          }
+          } 
           
           System.out.print("title? > ");
           title[size] = keyboard.nextLine();
