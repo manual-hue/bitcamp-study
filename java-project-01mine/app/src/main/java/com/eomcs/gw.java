@@ -1,5 +1,6 @@
 package com.eomcs;
 
+import java.util.Date;
 import java.util.Scanner;
 
 public class gw {
@@ -12,6 +13,7 @@ public class gw {
     String[] password = new String[BOARD_LENGTH];
     int size = 0;
     int[] viewCount = new int[BOARD_LENGTH];
+    Date[] createdDate = new Date[BOARD_LENGTH];
     
     System.out.println("<STRIKER 게시판 관리>");
     
@@ -49,6 +51,8 @@ public class gw {
           System.out.printf("title: %s\n", title);
           System.out.printf("content: %s\n", content);
           System.out.printf("password: %s\n", password);
+          System.out.printf("viewcount: %d\n", viewCount);
+          System.out.printf("createdDate: %1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS\n", createdDate[index]);
           
           System.out.println( );
           
