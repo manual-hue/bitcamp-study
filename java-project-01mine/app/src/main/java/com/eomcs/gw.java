@@ -11,6 +11,7 @@ public class gw {
     String[] content = new String[BOARD_LENGTH];
     String[] password = new String[BOARD_LENGTH];
     int size = 0;
+    int[] viewCount = new int[BOARD_LENGTH];
     
     System.out.println("<STRIKER 게시판 관리>");
     
@@ -43,11 +44,11 @@ public class gw {
             break;
           }
           
+          viewCount[index]++;
+          
           System.out.printf("title: %s\n", title);
           System.out.printf("content: %s\n", content);
           System.out.printf("password: %s\n", password);
-          
-          System.out.println( );
           
           System.out.println( );
           
@@ -83,7 +84,11 @@ public class gw {
           
           break;
         case "update":
+          System.out.println( );
           System.out.println("글 변경");
+          System.out.println( );
+          
+          for(int i )
           break;
         case "delete":
           System.out.println("글 삭제");
