@@ -39,7 +39,7 @@ public class gw {
           
           int index = Integer.parseInt(keyboard.nextLine()); // 키보드로 받은 문자 값을 숫자로 반환하겠다.
           if (index < 0 || index >= size) {
-            System.out.println("무효한 글 번호입니다. 다시 입력해주시길 바랍니다.");
+            System.out.println("무효한 액세스 값입니다. 다시 입력해주시길 바랍니다.");
             break;
           }
           
@@ -47,6 +47,9 @@ public class gw {
           System.out.printf("content: %s\n", content);
           System.out.printf("password: %s\n", password);
           
+          System.out.println( );
+          
+          System.out.println( );
           
           break;
         case "add":
