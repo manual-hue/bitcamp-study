@@ -23,13 +23,13 @@ public class CampPrac {
     }
     
     loop: while(true) {
-      System.out.println("원하시는 메뉴를 선택하세요.\n1. 예약 2. 퇴실 3. 예약 조회 (quit: 종료) > ");
+      System.out.println("원하시는 메뉴를 선택하세요.\n1. 예약 2. 퇴실 3. 예약 조회 4. 예약 명단 (quit: 종료) > ");
       String command = kb.nextLine(); // 키보드 값으로 입력 받겠다.
       
       switch (command) {
         case "1":
           System.out.println( );
-          System.out.println("ROOM RESERVATION");
+          System.out.println("객실 예약");
           System.out.println( );
           
           if (booking == ROOM_LENGTH) {
@@ -47,11 +47,29 @@ public class CampPrac {
           System.out.printf("%d\n", roomName);
           System.out.println("예약이 완료되었습니다.");
           
+          booking++;          
           break;
           
         case "2":
+          System.out.println( );
+          System.out.println("객실 퇴실");
+          System.out.println( );
           break;
         case "3":
+          System.out.println( );
+          System.out.println("예약 조회");
+          System.out.println( );
+          break;
+          
+        case "4":
+          System.out.println( );
+          System.out.println("예약 명단");
+          System.out.println( );
+          
+        for(int i=0; i<booking; i++) {
+          System.out.printf("%d, %s\n", i+1, roomName[i]);
+        }
+        
           break;
           
         case "quit":
@@ -63,7 +81,8 @@ public class CampPrac {
       }    
     
     
-    kb.close(); // 키보드는 쓰고 나면 꼭 닫는다.
+  
     }
+    kb.close(); // 키보드는 쓰고 나면 꼭 닫는다.
   }
 }
