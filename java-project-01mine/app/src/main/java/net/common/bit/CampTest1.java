@@ -2,7 +2,6 @@ package net.common.bit;
 
 import java.util.Scanner;
 
-
 class CampTest1 {
 
   public static void main(String[] args) {
@@ -66,6 +65,8 @@ class CampTest1 {
           System.out.println( );
           System.out.println("퇴실하실 방 번호를 입력해주세요. > ");
           int index = Integer.parseInt(sc.nextLine());          
+          
+          
           
           if(index < 0 || index > 5) {
             System.out.println(" 퇴실에 성공하였습니다.");
