@@ -8,7 +8,7 @@ public class CampPrac {
     System.out.println("1차원 배열 캠프");
     Scanner kb = new Scanner(System.in);
     boolean[] camp = new boolean[5];
-    int ROOM_LENGTH = 0;
+    int ROOM_LENGTH = 5;
     int booking = 0;
     String[] roomNum = new String[ROOM_LENGTH];
     String[] roomName = new String[ROOM_LENGTH];
@@ -37,14 +37,18 @@ public class CampPrac {
             break;
           }
           
-          System.out.println("Room Number? > ");
+          System.out.println("Room Number? (1~5) > ");
           roomNum[booking] = kb.nextLine();
+            if(roomNum[booking] < 1 || roomNum[booking] > 5) {
+              System.out.println("선택 불가능한 호실입니다. 다시 선택해주세요.");
+              break;
+            }
           
           System.out.println("Subscriber Name? > ");
           roomName[booking] = kb.nextLine();
           
-          System.out.printf("%d\n", roomNum);
-          System.out.printf("%d\n", roomName);
+          System.out.printf("%s\n", roomNum);
+          System.out.printf("%s\n", roomName);
           System.out.println("예약이 완료되었습니다.");
           
           booking++;          
