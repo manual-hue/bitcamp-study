@@ -8,16 +8,23 @@ public class gw {
     
     
     final int BOARD_LENGTH = 5;
+    char enter = 0;
     String[] title = new String[BOARD_LENGTH];
     String[] content = new String[BOARD_LENGTH];
     String[] password = new String[BOARD_LENGTH];
     int size = 0;
     int[] viewCount = new int[BOARD_LENGTH];
     Date[] createdDate = new Date[BOARD_LENGTH];
+    Scanner keyboard = new Scanner(System.in);
+    
+    System.out.println("password? ");
+    enter = keyboard.next(charAt(3));
+      if (enter {= System.out.println("Welcome back to S.H.E.I.L.D");
+    }
+    
     
     System.out.println("<STRIKER 게시판 관리>");
     
-    Scanner keyboard = new Scanner(System.in);
     
     loop: while(true) {
       System.out.print("액세스하고자 하는 메뉴를 입력하세요. ");
