@@ -18,8 +18,9 @@ public class gw {
     Scanner keyboard = new Scanner(System.in);
     
     System.out.println("password? ");
-    enter = keyboard.next(charAt(3));
-      if (enter {= System.out.println("Welcome back to S.H.E.I.L.D");
+    enter = keyboard.nextint(charAt(3));
+      if (enter) {
+        System.out.println("Welcome back to S.H.E.I.L.D");
     }
     
     
