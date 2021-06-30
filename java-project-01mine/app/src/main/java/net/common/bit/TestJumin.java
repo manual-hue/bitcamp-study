@@ -15,20 +15,15 @@ package net.common.bit;
 public class TestJumin {
   public static void main(String[] args) {
     String min = "871024-2541965";
-    System.out.println(getGender(min));
-
-  }
-
-  public static String getGender(String min) {
-    switch(min.charAt(min.indexOf("-")+1)) {
-      case '1':
-      case '3':
-        return "남자";
-      case '2':
-      case '4':
-        return "여자";
-      default :
-        return null;
+    char gender = min.charAt(7);
+    String message = "당신의 성별은?";
+    
+    if( gender == '1' ) {
+      message = "당신은 남자입니다.";      
+    } else if( gender == '2') {
+      message = "당신은 여자입니다.";
+    } else {
+      System.out.println("당신의 성별은?");
     }
   }
 }
