@@ -16,12 +16,12 @@ public class gw {
     int[] viewCount = new int[BOARD_LENGTH];
     Date[] createdDate = new Date[BOARD_LENGTH];
     Scanner keyboard = new Scanner(System.in);
-    
-    System.out.println("password? ");
-    enter = keyboard.nextint(charAt(3));
-      if (enter) {
-        System.out.println("Welcome back to S.H.E.I.L.D");
-    }
+
+//    System.out.println("password? ");
+//    enter = keyboard.nextint(charAt(3));
+//      if (enter) {
+//        System.out.println("Welcome back to S.H.E.I.L.D");
+//    }
     
     
     System.out.println("<STRIKER 게시판 관리>");
@@ -100,7 +100,7 @@ public class gw {
           System.out.println("글 변경");
           System.out.println( );
           
-          for(int i )
+//          for(int i )
           break;
         case "delete":
           System.out.println("글 삭제");
