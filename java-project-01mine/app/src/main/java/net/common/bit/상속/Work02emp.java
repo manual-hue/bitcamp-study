@@ -8,15 +8,29 @@ public class Work02emp {
     int sabun = 0; //입력받을 상수
     String name = null; //입력받을 이름
     
-    while(true) {
-      
-      System.out.println("사번을 입력해주세요. :");
-      sabun = Integer.parseInt(sc.nextLine());
+    while(true) { //true인동안 해당 문장 무한 출력
+      System.out.println("사번을 입력해주세요. : ");
+      try{
+        sabun = Integer.parseInt(sc.nextLine()); // sabun 형 변환 및 문자값을 받아 숫자로 전환한다는 뜻
+      } catch(Exception e){ // 에러 e 발생시 나오는 코드
+        System.out.println("정확한 숫자 값을 입력해주세요.");
+        continue;
+      } 
+      System.out.println("이름을 입력해주세요. : ");
+      name = sc.nextLine(); //이름을 입력받겠다.
+      break;
     }
   
+    
+    System.out.println( );    
+    System.out.println("사번 = " + sabun);
+    System.out.println("이름 = " + name);
+    
+    sc.close();
   
   }
 }
+
 //  public static void main(String[] args) {
 
 //    InputStream is = System.in;
