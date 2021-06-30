@@ -8,7 +8,6 @@ public class gw {
     
     
     final int BOARD_LENGTH = 5;
-    char enter = 0;
     String[] title = new String[BOARD_LENGTH];
     String[] content = new String[BOARD_LENGTH];
     String[] password = new String[BOARD_LENGTH];
@@ -17,11 +16,24 @@ public class gw {
     Date[] createdDate = new Date[BOARD_LENGTH];
     Scanner keyboard = new Scanner(System.in);
 
-//    System.out.println("password? ");
-//    enter = keyboard.nextint(charAt(3));
-//      if (enter) {
-//        System.out.println("Welcome back to S.H.E.I.L.D");
-//    }
+    
+   
+     
+    System.out.println("password? ");
+    String enter = null;
+    enter = keyboard.nextLine();
+   
+      if ( enter == keyboard.nextLine("abcd") ) {
+        System.out.println("Welcome back to S.H.E.I.L.D");
+    } else {
+        System.out.println("접근이 거부되었습니다.");
+        System.exit(1);
+    } 
+
+  
+    
+    
+    
     
     
     System.out.println("<STRIKER 게시판 관리>");
