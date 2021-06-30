@@ -22,6 +22,7 @@ public class kimFamily {
         case '1': System.out.println("성별: 남"); break;
         case '2': System.out.println("성별: 여"); break;
       }
+      break;
     }
     
     System.out.printf("이름: " + name);
