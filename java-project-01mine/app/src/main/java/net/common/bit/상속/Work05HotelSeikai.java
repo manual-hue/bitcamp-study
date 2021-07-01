@@ -8,7 +8,7 @@ package net.common.bit.상속;
 
 import java.util.Scanner;
 
-public class Work05Hotel {
+public class Work05HotelSeikai {
   
   private int floor; // 층=행 3층까지 있는 호텔
   private int room; // 호=열 5호까지 있는 호텔 3층*5열 = 15개 방
@@ -16,10 +16,10 @@ public class Work05Hotel {
   private String title;
   private Scanner sc;
   
-  public Work05Hotel() {}
-  public Work05Hotel(String name) {
+  public Work05HotelSeikai() {}
+  public Work05HotelSeikai(String name) {
   }
-  public Work05Hotel(String name, int year) {}
+  public Work05HotelSeikai(String name, int year) {}
   
   public void process() {
     Scanner sc = new Scanner(System.in);
@@ -27,7 +27,7 @@ public class Work05Hotel {
     while(true) {
       System.out.print("\n1. 입실\n2. 퇴실\n3. 지도\n4. 목록\n9. 종료 >>> ");
       sel = Integer.parseInt(sc.nextLine());
-        if(sel == 9) {
+      if(sel == 9) {
         System.out.println("호텔 예약 프로그램을 이용해주셔서 감사합니다.");
         System.exit(1);
         }
@@ -41,6 +41,7 @@ public class Work05Hotel {
         case 3:
           this.map();
           break;
+        default: System.out.println("잘못된 입력 값입니다."); break;
       }//switch end
     }//while end
   }//process end
@@ -90,7 +91,7 @@ public class Work05Hotel {
   }//checkIn end
   
   public static void main(String[] args) {
-    Work05Hotel wh = new Work05Hotel("신라 스테이");
+    Work05HotelSeikai wh = new Work05HotelSeikai("신라 스테이");
     wh.process();
   }
 }

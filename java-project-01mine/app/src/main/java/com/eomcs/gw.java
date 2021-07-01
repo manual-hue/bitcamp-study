@@ -18,18 +18,16 @@ public class gw {
 
     
    
-     
     System.out.println("password? ");
     String enter = null;
     enter = keyboard.nextLine();
    
-      if ( enter == keyboard.nextLine("abcd") ) {
+      if ( enter == "abcd" ) {
         System.out.println("Welcome back to S.H.E.I.L.D");
     } else {
         System.out.println("접근이 거부되었습니다.");
         System.exit(1);
     } 
-
   
     
     
