@@ -23,10 +23,9 @@ public Work05HotelSeikai(String name) {
    System.out.println("==============================");
    System.out.println(hotelName+"에 오신 것을 환영합니다!");
    System.out.println("==============================");
-   
 }
-public Work05HotelSeikai(String name, int year) {
    
+public Work05HotelSeikai(String name, int year) {
    String hotelName = name;
    int hotelYear = year;
    System.out.println("==============================");
@@ -34,7 +33,6 @@ public Work05HotelSeikai(String name, int year) {
    System.out.println("이 호텔은 "+hotelYear+"년 되었습니다.");
    System.out.println("==============================");
 }
-
 
 Scanner sc = new Scanner(System.in);
 
@@ -58,9 +56,7 @@ public void process() {
       case 3:
          map();
          continue;
-      case 4:
-         list();
-         continue;
+      case 4:  list(); break;
       default :
          System.out.println("다시 입력해 주십시오.");
          continue;
@@ -121,7 +117,7 @@ public void map() {//printAll()=list()=display()
    
    for(int i=0; i<3; i++) {
       for(int j=0; j<5; j++) {
-         System.out.print(roomNum[i][j]+"\n\t"+name[i][j]+"\t");
+         System.out.print("\t"+roomNum[i][j]+"\n\t"+name[i][j]+"\t");
       }
       System.out.println();
       System.out.println();
@@ -131,8 +127,18 @@ public void map() {//printAll()=list()=display()
    
 }//map end
 
-public void list() {//영림쌤이 구현해서 보여드릴 예정 안 해도 됨
-
+public void list() {
+  System.out.println("\n\t< list >");
+    for(int i=0; i<3; i++) {
+      for(int j=0; j<5; j++) {
+        if(name[i][j] == null) {
+          System.out.print( "" + (i+1) + "0" + (j+1) + "호" + "○\t" + "\t");
+        }else {
+          System.out.print( "" + (i+1) + "0" + (j+1) + "호" + "●\t" + name[i][j]);
+        }
+      }//j end
+      System.out.println( );
+    }//for i end
 }//checkIn end
 
 public static void main(String[] args) {

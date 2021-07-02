@@ -9,88 +9,141 @@ package net.common.bit.상속;
 import java.util.Scanner;
 
 public class Work05Hotel {
-  
-  private int floor; // 층=행 3층까지 있는 호텔
-  private int room; // 호=열 5호까지 있는 호텔 3층*5열 = 15개 방
-  private String[][] name = new String[3][5];
-  private String title;
-  private Scanner sc;
-  
-  public Work05Hotel() {}
-  public Work05Hotel(String name) {
-  }
-  public Work05Hotel(String name, int year) {}
-  
-  public void process() {
-    Scanner sc = new Scanner(System.in);
-    int sel = 9;
-    while(true) {
-      System.out.print("\n1. 입실\n2. 퇴실\n3. 지도\n4. 목록\n9. 종료 >>> ");
+
+private int floor; // 층=행 3층까지 있는 호텔
+private int room; // 호=열 5호까지 있는 호텔 3층*5열 = 15개 방
+private String [][] name = new String[3][5];
+private String title;
+
+public Work05Hotel() {}
+
+public Work05Hotel(String name) {
+   
+   String hotelName = name;
+   System.out.println("==============================");
+   System.out.println(hotelName+"에 오신 것을 환영합니다!");
+   System.out.println("==============================");
+   
+}
+   
+public Work05Hotel(String name, int year) {
+   String hotelName = name;
+   int hotelYear = year;
+   System.out.println("==============================");
+   System.out.println(hotelName+"에 오신 것을 환영합니다");
+   System.out.println("이 호텔은 "+hotelYear+"년 되었습니다.");
+   System.out.println("==============================");
+}
+
+Scanner sc = new Scanner(System.in);
+
+public void process() {
+   
+   int sel = 9;
+   while(true) {
+      System.out.print("\n1.입실\n2.퇴실\n3.지도\n4.목록\n9.종료 >>> ");
       sel = Integer.parseInt(sc.nextLine());
-        if(sel == 9) {
-        System.out.println("호텔 예약 프로그램을 이용해주셔서 감사합니다.");
-        System.exit(1);
-        }
-      switch(sel) {
-        case 1:
-          this.checkIn();
-          break;
-        case 2:
-          this.checkOut();
-          break;
-        case 3:
-          this.map();
-          break;
-      }//switch end
-    }//while end
-  }//process end
-  
-  public void checkIn() {
-    System.out.println("< 입실 예약 >");
-    System.out.println("\t> 몇 층에 투숙?");
-    floor = Integer.parseInt(sc.nextLine());
-    
-    System.out.println("\t> 몇 호에 투숙?");
-    room = Integer.parseInt(sc.nextLine());
-    
-    System.out.println("\t> 투숙객 이름?");
-    name[3][5] = sc.nextLine();
-    
-    System.out.println("체크인 되었습니다.");
-    System.out.printf("예약자명: "+name);
-    System.out.printf("호실: "+floor+"0"+room);
-  }//checkIn end
-  
-  public void checkOut() {
-    
-  }//checkOut end
-  
-  public void map() {//printAll()=list()=display()
-    System.out.println("\n\t[ "+title+" 투숙 상태 ]");
-    for(int i = 0; i < 3; i++) {
-      for(int b = 0; b < 5; b++) {
-        System.out.println((i+1)+"0"+(b+1)+"\t");
+      if(sel == 9) {
+         System.out.println("호텔 예약 프로그램을 이용해주셔서 감사합니다.");
+         System.exit(1);
       }
-      
-      System.out.println( ); //이름 표시 공백
-    
-      for(int j = 0; j < 5; j++) {
-        if(this.name[i][j] == null) {
-          System.out.println("\t");
-          continue;
-        }//if end
-        System.out.print(this.name[i][j]+"\t");
+      switch(sel) {
+      case 1:
+         checkIn();
+         continue;
+      case 2:
+         checkOut();
+         continue;
+      case 3:
+         map();
+         continue;
+      case 4:  list(); break;
+      default :
+         System.out.println("다시 입력해 주십시오.");
+         continue;
+      }//switch end
+   }//while end
+}//process end
+
+public void checkIn() {
+   
+   System.out.print("몇층에 투숙? > ");
+   floor=Integer.parseInt(sc.nextLine());
+   System.out.print("몇호에 투숙? > ");
+   room=Integer.parseInt(sc.nextLine());
+   System.out.print("투숙객 이름? > ");
+   String guest=sc.nextLine();
+   
+   for(int i=0; i<3; i++) {
+      for(int j=0; j<5; j++) {
+         if (i==floor-1 && j==room-1) {
+            name[floor-1][room-1]=guest;
+         }
+         name[i][j]=" ";
+      }
+   }
+   
+   
+   name[floor-1][room-1]=guest;      
+   
+
+}//checkIn end
+
+public void checkOut() {
+   
+   System.out.print("퇴실하시는 분 성함이? >");
+   String guest=sc.nextLine();
+   
+   for(int i=0; i<3; i++) {
+      for(int j=0; j<5; j++) {
+         if (guest.equals(name[i][j])) {
+            name[i][j]=" ";
+         }
+      }
+   }
+   System.out.println(guest+"님의 퇴실 처리가 완료되었습니다.");
+
+}//checkOut end
+
+public void map() {//printAll()=list()=display()
+
+   String[][] roomNum=new String[3][5];
+   
+   for(int i=0; i<3; i++) {
+      for(int j=0; j<5; j++) {
+         roomNum[i][j]=(i+1)+"0"+(j+1);
+      }
+   }
+   
+   
+   for(int i=0; i<3; i++) {
+      for(int j=0; j<5; j++) {
+         System.out.print("\t"+roomNum[i][j]+"\n\t"+name[i][j]+"\t");
+      }
+      System.out.println();
+      System.out.println();
+      System.out.println("=======================================");
+   }
+   
+   
+}//map end
+
+public void list() {
+  System.out.println("\n\t< list >");
+    for(int i=0; i<3; i++) {
+      for(int j=0; j<5; j++) {
+        if(name[i][j] == null) {
+          System.out.print( "" + (i+1) + "0" + (j+1) + "호" + "○\t" + "\t");
+        }else {
+          System.out.print( "" + (i+1) + "0" + (j+1) + "호" + "●\t" + name[i][j]);
+        }
       }//j end
-      System.out.println("\nㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+      System.out.println( );
     }//for i end
-  }//map end
-  
-  public void list() {//영림쌤이 구현해서 보여드릴 예정 안 해도 됨
-    
-  }//checkIn end
-  
-  public static void main(String[] args) {
-    Work05Hotel wh = new Work05Hotel("신라 스테이");
-    wh.process();
+}//checkIn end
+
+public static void main(String[] args) {
+   Work05Hotel wh = new Work05Hotel("신라 스테이");
+   wh.process();
   }
 }

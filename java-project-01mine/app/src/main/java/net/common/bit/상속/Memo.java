@@ -29,6 +29,10 @@ public class Memo extends Frame implements WindowListener,ActionListener {
     this.add("South", pan); //pan=Panel판넬 
 
     //이벤트연결 리스너추가
+//    문법 에러 WindowListener wl = new WindowListener();
+    //addWindowListener(wl); 문법적으로 문제는 없으나 윈도우 종료가 되지 않음
+    
+    
     this.addWindowListener(this); //앞this  뒤this
     tf.addActionListener(this);
     btnSend.addActionListener(this);
@@ -75,10 +79,15 @@ public class Memo extends Frame implements WindowListener,ActionListener {
     System.exit(1);
   }//end
 
-
+  public void bitCamp() {
+//    AAA ac = new AAA(); //추상메서드를 인터페이스로 쓸 수 없다.
+//    Windo
+    WindowListener wl = new WindowListener();
+  }
   public static void main(String[] args) {
     Memo pad = new Memo();  //생성자호출
     //pad.windowClosing(null);//에러는 아님 단점
+//    AAA aa = null; //선언만
   }//end
 
 }//class END
