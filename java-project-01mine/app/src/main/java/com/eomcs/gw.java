@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class gw {
   
-  String enter = null;
   final int BOARD_LENGTH = 5;
   String[] title = new String[BOARD_LENGTH];
   String[] content = new String[BOARD_LENGTH];
@@ -13,18 +12,15 @@ public class gw {
   int size = 0;
   int[] viewCount = new int[BOARD_LENGTH];
   Date[] createdDate = new Date[BOARD_LENGTH];
-  Scanner keyboard = new Scanner(System.in);
+  static Scanner keyboard = new Scanner(System.in);
   
+    
   public static void main(String[] args) {
     
-    gw gwlove = new gw();
     gwlove.process("S.H.E.I.L.D. PROCESS");
-    
-    
-
       
     System.out.println("password? ");
-    enter = keyboard.nextLine();
+    String enter = keyboard.nextLine();
    
       if ( enter == "abcd" ) {
         System.out.println("Welcome back to S.H.E.I.L.D");
@@ -32,7 +28,7 @@ public class gw {
         System.out.println("접근이 거부되었습니다.");
         System.exit(1);
       } 
-    }//process end
+    }//main end
   
     public void add() {
 
@@ -64,14 +60,16 @@ public class gw {
 
       System.out.println( );
       
-    }
+    }//add end
+    
     public void update() {
       System.out.println( );
       System.out.println("글 변경");
       System.out.println( );
       
 //      for(int i )
-    }
+    }//update end
+    
     public void list() {
       System.out.println( );
       System.out.println("글 목록");
@@ -79,8 +77,9 @@ public class gw {
       
       for (int i=0; i<size; i++) {
         System.out.printf("%d, %s\n", i, title[i]);
-      }
+      }//for end
     }
+    
     public void view() {
       System.out.println( );
       System.out.println("글 조회");
@@ -102,12 +101,16 @@ public class gw {
       System.out.printf("createdDate: %1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS\n", createdDate[index]);
       
       System.out.println( );
-    }
+    }// view end
+    
     public void delete() {
+      
       System.out.println( );
       System.out.println("글 삭제");
       System.out.println( );
-    }
+      
+    }// delete end
+    
     
     
     loop: while(true) {
