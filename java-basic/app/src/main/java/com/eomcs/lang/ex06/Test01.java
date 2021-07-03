@@ -22,8 +22,9 @@ public class Test01 {
   }
   
   public static void main(String[] args) {
-    int result = countEvenNumbers(4567034);
-    System.out.println(result); // 4
+    
+    int result = countEvenNumbers(19940315); //짝수 개수 출력
+    System.out.println(result);
     
     result = countEvenNumbers(8088753);
     System.out.println(result); //4
