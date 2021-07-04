@@ -14,22 +14,39 @@ public class gw {
   Date[] createdDate = new Date[BOARD_LENGTH];
   static Scanner keyboard = new Scanner(System.in);
   
+  
+  public void mainProcess() {
     
-  public void first(String[] args) {
+    loop: while(true) {
+      System.out.println("<STRIKER 게시판 관리>");
+      System.out.print("액세스하고자 하는 메뉴를 입력하세요. ");
+      String command = keyboard.nextLine();
       
-    System.out.println("password? ");
-    String enter = keyboard.nextLine();
-   
-      if ( enter == "abcd" ) {
-        System.out.println("Welcome back to S.H.E.I.L.D");
-    } else {
-        System.out.println("접근이 거부되었습니다.");
-        System.exit(1);
-      } 
-    }
-  
-  
-  
+      switch (command) {
+        case "list":
+          this.list();
+          break;
+        case "view":
+          this.view();
+          break;
+        case "add":
+          this.add();
+          break;
+        case "update":
+          this.update();
+          break;
+        case "delete":
+          this.delete();
+          break;
+        default:
+          System.out.println("잘못된 명령입니다.");
+          break;
+        case "quit":
+          break loop; 
+      }//switch end
+    }  //while end
+  }    //main process end
+    
   
     public void list() {
       System.out.println( );
@@ -74,10 +91,13 @@ public class gw {
       
     }//add end
 
+    
     public void update() {
       System.out.println( );
       System.out.println("글 변경");
       System.out.println( );
+      
+      
       
 //      for(int i )
     }//update end
@@ -112,42 +132,26 @@ public class gw {
       System.out.println("글 삭제");
       System.out.println( );
       
-    }// delete end
+    }// delete end    
     
-    
-    
-    loop: while(true) {
-      System.out.println("<STRIKER 게시판 관리>");
-      System.out.print("액세스하고자 하는 메뉴를 입력하세요. ");
-      String command = keyboard.nextLine();
+
+    keyboard.close();
+    System.out.print("이용해주셔서 감사합니다.");
+       
+
+    public static void main(String[] args) {
+      gw gwstriker = new gw();
+      gwstriker.mainProcess();
       
-      switch (command) {
-        case "list":
-          this.list();
-          break;
-        case "view":
-          this.view();
-          break;
-        case "add":
-          this.add();
-          break;
-        case "update":
-          this.update();
-          break;
-        case "delete":
-          this.delete();
-          break;
-        default:
-          System.out.println("잘못된 명령입니다.");
-          break;
-        case "quit":
-          break loop; 
+      System.out.println("password? ");
+      String enter = keyboard.nextLine();
+     
+        if ( enter == "abcd" ) {
+          System.out.println("Welcome back to S.H.E.I.L.D");
+      } else {
+          System.out.println("접근이 거부되었습니다.");
+          System.exit(1);
+
       }
     }
-    
-    keyboard.close();
-    System.out.println("이용해주셔서 감사합니다.");
-    
-    }   
   }
-}
