@@ -14,6 +14,19 @@ public class gw {
   Date[] createdDate = new Date[BOARD_LENGTH];
   static Scanner keyboard = new Scanner(System.in);
   
+  public void first() {
+    
+    System.out.println("password? ");
+    String enter = keyboard.nextLine();
+    
+      if ( enter.equals("0811")) {
+        System.out.println("Welcome back to S.H.E.I.L.D");
+        return;
+    } else {
+        System.out.println("접근이 거부되었습니다.");
+        System.exit(1);
+    }//else end
+  }
   
   public void mainProcess() {
     
@@ -65,10 +78,12 @@ public class gw {
       System.out.println("글 작성");
       System.out.println( );
       
+      for(int i=0; i<BOARD_LENGTH; i++) {
       if (size == BOARD_LENGTH) {
         System.out.println("더 이상 글을 작성할 수 없습니다.");
         break;
-      } 
+        } 
+      }
       
       System.out.print("title? > ");
       title[size] = keyboard.nextLine();
@@ -98,7 +113,6 @@ public class gw {
       System.out.println( );
       
       
-      
 //      for(int i )
     }//update end
     
@@ -110,9 +124,12 @@ public class gw {
       System.out.print("content Number? > ");
       
       int index = Integer.parseInt(keyboard.nextLine()); // 키보드로 받은 문자 값을 숫자로 반환하겠다.
-      if (index < 0 || index >= size) {
-        System.out.println("무효한 액세스 값입니다. 다시 입력해주시길 바랍니다.");
-        break;
+      
+      for(int i=0; i<size ; i++) {
+        if (index < 0 || index >= size) {
+          System.out.println("무효한 액세스 값입니다. 다시 입력해주시길 바랍니다.");
+          break;
+        }
       }
       
       viewCount[index]++;
@@ -120,9 +137,7 @@ public class gw {
       System.out.printf("title: %s\n", title);
       System.out.printf("content: %s\n", content);
       System.out.printf("password: %s\n", password);
-      System.out.printf("viewcount: %d\n", viewCount);
       System.out.printf("createdDate: %1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS\n", createdDate[index]);
-      
       System.out.println( );
     }// view end
     
@@ -132,26 +147,15 @@ public class gw {
       System.out.println("글 삭제");
       System.out.println( );
       
-    }// delete end    
-    
-
-    keyboard.close();
-    System.out.print("이용해주셔서 감사합니다.");
-       
+    }// delete end
 
     public static void main(String[] args) {
-      gw gwstriker = new gw();
-      gwstriker.mainProcess();
       
-      System.out.println("password? ");
-      String enter = keyboard.nextLine();
-     
-        if ( enter == "abcd" ) {
-          System.out.println("Welcome back to S.H.E.I.L.D");
-      } else {
-          System.out.println("접근이 거부되었습니다.");
-          System.exit(1);
-
-      }
+      gw gwstriker = new gw();
+      gwstriker.first(); // 패스워드부터 진입
+      gwstriker.mainProcess(); // 그 다음 메인 메뉴
+      
+      System.out.println("액세스 프로그램을 종료합니다.");
     }
+    
   }
