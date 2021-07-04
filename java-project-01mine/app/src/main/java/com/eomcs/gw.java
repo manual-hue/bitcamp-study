@@ -15,9 +15,7 @@ public class gw {
   static Scanner keyboard = new Scanner(System.in);
   
     
-  public static void main(String[] args) {
-    
-    gwlove.process("S.H.E.I.L.D. PROCESS");
+  public void first(String[] args) {
       
     System.out.println("password? ");
     String enter = keyboard.nextLine();
@@ -28,7 +26,21 @@ public class gw {
         System.out.println("접근이 거부되었습니다.");
         System.exit(1);
       } 
-    }//main end
+    }
+  
+  
+  
+  
+    public void list() {
+      System.out.println( );
+      System.out.println("글 목록");
+      System.out.println( );
+    
+    for (int i=0; i<size; i++) {
+      System.out.printf("%d, %s\n", i, title[i]);
+    }//for end
+  }
+
   
     public void add() {
 
@@ -61,7 +73,7 @@ public class gw {
       System.out.println( );
       
     }//add end
-    
+
     public void update() {
       System.out.println( );
       System.out.println("글 변경");
@@ -70,15 +82,6 @@ public class gw {
 //      for(int i )
     }//update end
     
-    public void list() {
-      System.out.println( );
-      System.out.println("글 목록");
-      System.out.println( );
-      
-      for (int i=0; i<size; i++) {
-        System.out.printf("%d, %s\n", i, title[i]);
-      }//for end
-    }
     
     public void view() {
       System.out.println( );
