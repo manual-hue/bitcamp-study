@@ -11,7 +11,7 @@ public class JyPrac {
     System.out.println("언니한테 인사합시다 : ");
     enter = sysy.nextLine();
 
-    loop: while(true) {
+    while(true) {
     if ( enter.equals("안녕")) {
       System.out.println("지윤아 사랑행!!");
       break;
