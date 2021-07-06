@@ -8,8 +8,6 @@ public class Test0706 {
     Scanner sc = new Scanner(System.in);
     //출력insert into insa(sabun,name,buse) values(3345, 'kim', '전산') , 예외처리
     String msg="";
-
-
     
       loop: while(true) {
         try{
