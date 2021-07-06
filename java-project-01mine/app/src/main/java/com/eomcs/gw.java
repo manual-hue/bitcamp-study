@@ -31,6 +31,7 @@ public class gw {
   public void mainProcess() {
     
     loop: while(true) {
+      System.out.println( );//맨 처음 시작 공백
       System.out.println("<STRIKER 게시판 관리>");
       System.out.print("액세스하고자 하는 메뉴를 입력하세요. ");
       String command = keyboard.nextLine();
