@@ -9,15 +9,15 @@ public class Test0706 {
     //출력insert into insa(sabun,name,buse) values(3345, 'kim', '전산') , 예외처리
     String msg="";
     
-      loop: while(true) {
-        try{
-        System.out.print("사번입력>>>");
+      while(true) {
+        loop: try{
+        System.out.print("사번을 입력하세요. : ");
         int a = Integer.parseInt(sc.nextLine());  
         
-        System.out.print("이름입력>>>");
+        System.out.print("이름을 입력하세요. : ");
         String b = sc.nextLine();  
         
-        System.out.print("부서입력>>>");
+        System.out.print("부서를 입력하세요. : ");
         String c = sc.nextLine();  
         
         System.out.printf("%d, %s, %s", a, b, c);
@@ -26,8 +26,8 @@ public class Test0706 {
       } catch ( Exception e ) {
         msg = "insert into insa(sabun,name,buse) values(a, 'b', 'c')" ;
         System.out.println( msg );
-        continue loop;
-      }
+        
+      } 
       }
     }
   }//class END
