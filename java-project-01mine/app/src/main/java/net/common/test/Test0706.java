@@ -11,7 +11,8 @@ public class Test0706 {
 
 
     
-      try{
+      loop: while(true) {
+        try{
         System.out.print("사번입력>>>");
         int a = Integer.parseInt(sc.nextLine());  
         
@@ -27,7 +28,8 @@ public class Test0706 {
       } catch ( Exception e ) {
         msg = "insert into insa(sabun,name,buse) values(a, 'b', 'c')" ;
         System.out.println( msg );
+        continue loop;
       }
-  
+      }
     }
   }//class END
