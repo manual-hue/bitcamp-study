@@ -1,5 +1,6 @@
 package net.common.bit;
 
+import java.util.Date;
 import java.util.Scanner;
 
 class CampTest1 {
@@ -18,7 +19,8 @@ class CampTest1 {
     
     loop: while(true) {
       
-      if (){
+      size = Integer.parseInt(sc.nextLine());
+      if (size ){
         System.out.println("1번째 캠프장은 비어 있습니다.");
         
         

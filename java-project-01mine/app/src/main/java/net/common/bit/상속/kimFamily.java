@@ -29,8 +29,6 @@ public class kimFamily {
     System.out.printf("성별: " + gender);
     System.out.printf("주민등록번호: " + jumin);
     
-
-    
     System.out.println("이용해주셔서 감사합니다.");
     
   }
