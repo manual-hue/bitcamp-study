@@ -45,7 +45,12 @@ public class DBTest2 {
 	    	String utitle = RS.getString("title");
 	    	int ucnt = RS.getInt("cnt");
 	    	System.out.println(ucode +"\t" + uname+"\t" + utitle+"\t" + udt+"\t" + ucnt);
-	    }
+	    }//while end
+	   
+//	   System.out.println( );
+//       System.out.println("code 필드로 조회 데이터를 삭제합니다.");
+//       삭제처리 좋아요 msg = " delete where code
+       Thread.sleep(1000);
 	 }catch(Exception ex) { System.out.println("에러이유 " + ex);}	
 	 sc.close();
 	}//main end
