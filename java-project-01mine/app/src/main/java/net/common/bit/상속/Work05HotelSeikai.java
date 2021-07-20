@@ -66,17 +66,20 @@ public void process() {
 
 public void checkIn() {
    
+  //int seatCnt;
+  
    System.out.print("몇층에 투숙? > ");
    floor=Integer.parseInt(sc.nextLine());
    System.out.print("몇호에 투숙? > ");
    room=Integer.parseInt(sc.nextLine());
    System.out.print("투숙객 이름? > ");
    String guest=sc.nextLine();
-   
+
    for(int i=0; i<3; i++) {
       for(int j=0; j<5; j++) {
          if (i==floor-1 && j==room-1) {
             name[floor-1][room-1]=guest;
+            
          }
          name[i][j]=" ";
       }
