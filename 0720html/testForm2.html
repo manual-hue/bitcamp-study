@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>화면 만들기 김소연</title>
+        <style>
+        * { font-size: 16pt;  font-family: 'Times New Roman','돋움체' Courier, monospace; }
+        a { font-size: 26pt; text-decoration: none;   color: blue;     }
+        a:hover { font-size: 36pt; text-decoration: none;  color: green; font-family: 'comic sans ms';   }
+        </style>
+
+        <script>
+            function  nullCheck(){
+                a = document.myform.code.value;
+                b = document.myform.title.value;
+                if(a=="" || a==null){
+                    alert("데이터 값이 없습니다. 정확한 내용을 입력해주세요!");
+                } else{ }
+            }//end
+        </script>
+    </head>
+
+
+    <body>
+
+        <font ><b>Hello, World! 로그인하시겠습니까?</b></font><p></p>
+        <form name="myform">
+
+        코드: <input type="text" name="code" maxlength="4" size="8"> <font color=red>*</font>필수 입력 사항<br>
+        제목: <input type="text" name="code" value="snow" size="10"> <p></p>
+        <input type="button" value="저장" onclick="nullCheck()">
+        <input type="button" value="취소">
+    </form>
+
+
+    <h1 id=bitcamp bank></h1>
+    <font size=7>
+      <b><a href=""</b>
+    </font>
+
+
+</body>
+</html>
