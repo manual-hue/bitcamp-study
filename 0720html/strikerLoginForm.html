@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.H.I.E.L.D</title>
+    <style>>
+    * { margin: 10px; font-size: 16pt;  font-family: 'Times New Roman', '바탕체' Courier, monospace; }
+    a { font-size: 26pt; text-decoration: none;   color: blue;     }
+    a:hover { font-size: 36pt; text-decoration: none;  color: green; font-family: 'comic sans ms';   }
+    </style>
+    <script>
+
+        function nullCheck(){
+            a = striker.code.value;
+
+            if(a== "" || a==null) {
+                alert('아이디를 입력해주세요.');
+                striker.code.focus();
+                return;
+            }else{
+
+                return false;
+            }
+
+            b = striker.password.value;
+
+        }
+
+    </script>
+</head>
+<body>
+
+    <font size=5>로그인 화면 구현</font>
+    <form name="striker">
+        Name? <input type="text" name="code" maxlength="12">&nbsp;<font color="tomato">*</font>&nbsp;필수 항목  <br>
+        Password? <input type="text" name="password" maxlength="12"><p></p>
+        <input type="button" value="save" onclick=onclick:nullCheck()>
+        <input type="button" value="cancel">
+    </form>
+    
+</body>
+</html>
